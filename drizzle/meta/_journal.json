@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786772071691,
+      "tag": "0000_windy_squadron_supreme",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1786772367060,
+      "tag": "0001_fast_venus",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786774366433,
+      "tag": "0002_real_marvex",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1786774617105,
+      "tag": "0003_awesome_ogun",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1786774888052,
+      "tag": "0004_melodic_luckman",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1786775260235,
+      "tag": "0005_cheerful_inertia",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1786775655690,
+      "tag": "0006_huge_adam_destine",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1786777293854,
+      "tag": "0007_shocking_miek",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>LinguaForge · Aprende idiomas con intención</title>
+    <meta
+      name="description"
+      content="LinguaForge es una plataforma open source para aprender idiomas de forma progresiva, interactiva y personalizada."
+    />
+    <meta name="author" content="Pedro Belentani" />
+    <meta property="og:site_name" content="LinguaForge" />
+    <meta
+      property="og:title"
+      content="LinguaForge · Aprende idiomas con intención"
+    />
+    <meta
+      property="og:description"
+      content="Niveles MCER, rutas bidireccionales, práctica libre y repaso espaciado para aprender idiomas."
+    />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LinguaForge",
+        "description": "Plataforma open source para aprender idiomas de forma progresiva, interactiva y personalizada.",
+        "inLanguage": "es",
+        "creator": {
+          "@type": "Person",
+          "name": "Pedro Belentani",
+          "sameAs": ["https://belentani.eu", "https://noiacore.com"]
+        }
+      }
+    </script>
+    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script data-lingua-forge-boot>
+      (() => {
+        const root = document.getElementById("root");
+        if (!root) return;
+        const showBootError = (reason) => {
+          if (root.children.length > 0) return;
+          root.innerHTML = `<main style="min-height:100vh;display:grid;place-items:center;padding:2rem;background:#f8f7f4;color:#252724;font-family:system-ui,sans-serif"><section style="max-width:36rem"><p style="font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#a94731">LinguaForge</p><h1 style="font-size:2rem;line-height:1.1;margin:.5rem 0 1rem">LinguaForge no pudo cargar</h1><p style="line-height:1.6;color:#535752">Se produjo un problema al iniciar la aplicación. Recarga la página o inténtalo de nuevo más tarde.</p><button type="button" onclick="location.reload()" style="margin-top:1rem;border:0;border-radius:.6rem;padding:.7rem 1rem;background:#a94731;color:white;font-weight:700;cursor:pointer">Recargar</button></section></main>`;
+          root.dataset.bootError = reason;
+          console.error("[LinguaForge boot]", reason);
+        };
+        window.addEventListener("error", (event) => {
+          const filename = event.filename || "";
+          const isApplicationAsset =
+            filename.startsWith(window.location.origin) &&
+            filename.includes("/assets/");
+          if (!isApplicationAsset) {
+            console.error(
+              "[LinguaForge external boot error]",
+              event.message,
+              filename,
+            );
+            return;
+          }
+          const detail = event.message
+            ? `script-error: ${event.message.slice(0, 160)}`
+            : "script-error";
+          showBootError(detail);
+        });
+        window.addEventListener("unhandledrejection", (event) => {
+          const reason = event.reason;
+          const detail = reason?.message
+            ? `promise-rejection: ${reason.message.slice(0, 160)}`
+            : "promise-rejection";
+          showBootError(detail);
+        });
+        window.setTimeout(() => {
+          if (root.children.length === 0) showBootError("empty-root");
+        }, 5000);
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"
+    ></script>
+  </body>
+</html>
